@@ -56,4 +56,4 @@ Additional info
 - Push your branch and make a PR.
 - Post PR title and link to it in chat.
 - If you see review request in chat then take a time to make a review as soon as possible.
-- Add 👀 emoji on request message in chat and change it to 👍 after completion.
+- While reviewing add 👀 emoji on request message in chat and change it to 👍 after the review completion.
