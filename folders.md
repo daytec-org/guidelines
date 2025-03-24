@@ -1,3 +1,8 @@
+### Files:
+- !important: Define IDE settings to insert a final newline (insert a final new line at the end of the file when saving it).
+- All file and folder names must start from lower cased letter (inclede app.ts/x).
+
+### Folders:
 ```
 .
 ├── src
