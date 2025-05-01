@@ -1,46 +1,46 @@
-## Глобальные стили
-Используем глобальные стили, применяемые для всех элементов а так же стили для html, body.
+## Global styles
+We use global styles for all elements, as well as styles for html, body.
 
-В глобальные стили могут быть импортированы стили шрифтов, переменные и override стили для внешних библиотек, если они используются. Конкретно в этом проекте настрого не используются никакие UI библиотеки.
+Global styles can import font styles, variables and override styles for external libraries, if they are used. Specifically in this project we do not use any UI libraries.
 
-Не используем (мусорные) файлы сброса стилей: всё что нужно сбросить прописывается конкретно,- ничего лишнего.
+We don't use (garbage) style reset files: everything that needs to be reset is specified specifically, nothing unnecessary.
 
-## Модули
-Для компонент используем модули, за редким исключением для модалок, попапов и пр. компонент, которые могут быть только в одном экземпляре на весь проект и имеют уникальные имена.
+## Modules
+We use modules for components, with rare exceptions for modals, popups, etc. components, which can be only one copy for the whole project and have unique names.
 
-## Импорт
-Импорт стилей должен следовать с отступом от остальных импортов и после него ничто не должно импортироваться.
+## Import
+Style import should be indented from other imports and nothing should be imported after it.
 
-## Классы
-В модулях не используем стили для элементов напрямую. Можно задавать стили для элементов, для которых не указан класс только указаывая класс родителя.
+## Classes
+We don't use styles for elements directly in modules. You can set styles for elements for which no class is defined only by specifying the parent class.
 
-Пример: `.block__element img`
+Example: `.block__element img`.
 
-## Нейминг
-Учитывая модульность, можно было бы давать какие угодно имена для внутренних стилей компонент, но в этом проекте используем нейминг по БЭМ с поправкой на React:
+## Naming
+With modularity in mind, you could give whatever names you want for internal component styles, but in this project we'll use React-adjusted BEM naming:
 
-`block__element_modifier`
+`block__element_modifier`.
 
-Имена должны начинаться с [block], элементы должны иметь имена в соответствии с назначением. Вложенные элементы, такие как .button, .input, .img и тп., не обязательно должны иметь часть [block]
+Names should start with [block], elements should be named according to their purpose. Nested elements such as .button, .input, .img, etc. do not need to have the [block] part.
 
-## Модификаторы
-- hover оборачиваем в @media(hover: hover).
-- focus. Было не самым лучшим решением на уровне глобальных стилей убрать outline для всех элементов попадающих в фокус чтобы не тратить время на прописывание параметров outline-а для каждого элемента. Пока так, потом возможно потратим время на доработку.
+## Modifiers
+- hover should be wrapped in @media(hover: hover).
+- focus. It was not the best solution at the level of global styles to remove outline for all elements that fall into focus, so as not to waste time on writing outline parameters for each element. We'll leave it like this for now, then we may spend time on improvement.
 
-## Единицы измерения
-Используем относительные значения:
-- rem для малых величин. Не более 3-х знаков после запятой.
-- em для изменения размеров внутри элемента, для родителя которого задана величина.
-- %%, vw, dvh для width / height
+## Units of measurement
+We use relative values:
+- rem for small values. No more than 3 digits after the decimal point.
+- em for resizing inside the element, for whose parent the value is set.
+- %%, vw, dvh for width / height
 
-## Отступы
-Не используется если применён stylelint.
-Между стилями должна быть пустая строка.
-Исключение: уточняющие стили и содержащие модификаторы располагаются без отступов.
-Пример:
+## Indents
+Not used if stylelint is applied.
+There must be an empty line between styles. 
+Exception: defining styles and styles containing modifiers are not indented. 
+Example:
 ```css
 .inclusions__select{}
-/* Отступ */
+/* Indent */
 .inclusions__select_prev,
 .inclusions__select_next{
   ...
@@ -57,14 +57,14 @@
   }
 }
 ```
-## Порядок стилей
-Не используется если применён stylelint.
+## Styles order
+Not used if stylelint is applied.
 1. position, left/right/top/bottom
 2. display
-3. Размеры и отступы: width, height, margin, padding…
+3. Dimensions and indents: width, height, margin, padding…
 4. border
-5. Общее оформление содержимого: list-style-type, overflow…
-6. Цветовое и стилевое оформление: background, color, font…
+5. General content design: list-style-type, overflow…
+6. Color and style design: background, color, font…
 7. cursor
 8. z-index
     ...
